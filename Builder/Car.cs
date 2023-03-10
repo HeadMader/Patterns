@@ -1,19 +1,45 @@
-﻿using Patterns.Bulder.Car_parts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
-namespace Patterns.Bulder
+namespace Patterns.Builder
 {
 	public class Car
 	{
-		public string Name { get; set; }
-		public IEngine Engine { get; set; }
-		public IBody Body { get; set; }
-		public IInterior Interior { get; set; }
-		public IEnumerable<ICarService> CarServices { set; get; }
+		public string Name { get; private set; }
+		private IEngine _engine;
+		private IBody _body;
+		private IInterior _interior;
+
+		public IEngine Engine
+		{
+			get => _engine;
+			set
+			{
+				if (_engine == null) 
+					_engine = value;
+			}
+		}
+
+		public IBody Body
+		{
+			get => _body;
+			set
+			{
+				if (_body == null)
+					_body = value;
+			}
+		}
+
+		public IInterior Interior
+		{
+			get => _interior;
+			set
+			{
+				if (value != null)
+					_interior = value;
+			}
+		}
+
+		public ICollection<ICarService> CarServices { get; set; }
 
 		public Car() : this("Car") { }
 
@@ -21,13 +47,13 @@ namespace Patterns.Bulder
 		{
 			this.Name = name;
 		}
-
+		
 		public override string ToString()
 		{
 			StringBuilder stringBuilder = new StringBuilder();
 
 			string str = "";
-			
+
 			str = Name != "" ? $"Name: {Name}\n" : "Name: \n";
 			stringBuilder.Append(str);
 

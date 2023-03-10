@@ -1,27 +1,18 @@
-﻿using Patterns.Bulder.Car_parts;
-using Patterns.Bulder.Services;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Patterns.Bulder.Builders
+﻿namespace Patterns.Builder
 {
-    public class TeslaCarBuilder : ICarBuilder
+    public class AudiCarBuilder : ICarBuilder
     {
         private Car car;
 
         /// <summary>
         /// Сollection of servies that builder can provide to <see cref="Car"/> 
         /// </summary>
-        public ICollection<ICarService> Services { get; set; } 
+        public ICollection<ICarService> Services { get; set; }
 
-        public TeslaCarBuilder()
+        public AudiCarBuilder()
         {
             Services = new List<ICarService>();
-            car = new Car("Tesla Model S Plaid");
+            car = new Car("Audi");
         }
 
         /// <summary>
@@ -29,7 +20,7 @@ namespace Patterns.Bulder.Builders
         /// </summary>
         public void SetCarBody()
         {
-            car.Body = new AluminiumBody();
+            car.Body = new SteelBody();
         }
 
         /// <summary>
@@ -37,7 +28,7 @@ namespace Patterns.Bulder.Builders
         /// </summary>
         public void SetCarInterior()
         {
-            car.Interior = new Interior("cool");
+            car.Interior = new Interior("AudiInterior");
         }
 
         /// <summary>
@@ -45,7 +36,7 @@ namespace Patterns.Bulder.Builders
         /// </summary>
         public void SetEngine()
         {
-            car.Engine = new ElectricEngine();
+            car.Engine = new DVSEngine();
         }
 
         /// <summary>
@@ -64,6 +55,5 @@ namespace Patterns.Bulder.Builders
         {
             return car;
         }
-
     }
 }

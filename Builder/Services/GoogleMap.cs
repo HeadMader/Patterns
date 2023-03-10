@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Patterns.Bulder.Services
+namespace Patterns.Builder
 {
-	internal class GoogleMap : ICarService
+    internal class GoogleMap : ICarService
 	{
 		public string Name => "GoogleMap";
 

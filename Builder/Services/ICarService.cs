@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Patterns.Bulder
+namespace Patterns.Builder
 {
-	public class Client
+    public interface ICarService
     {
+        string Name { get; }
     }
 }

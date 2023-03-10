@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Patterns.Bulder.Car_parts
+namespace Patterns.Builder
 {
-	public interface IBody
+	public interface IInterior
 	{
-		string Name { get; }
+		string Name { get; set; }
 
 		/// <summary>
-		/// Info about <see cref="IBody"/>
+		/// Info about <see cref="IInterior"/>
 		/// </summary>
 		public string? Info()
 		{
@@ -19,7 +19,7 @@ namespace Patterns.Bulder.Car_parts
 
 			string str = "";
 
-			str = Name != "" ? $"Name: {Name} \n " : "Name: Body\n";
+			str = Name != "" ? $"Name: {Name} \n " : "Name: Interior\n";
 			stringBuilder.Append(str);
 
 			return stringBuilder.ToString();

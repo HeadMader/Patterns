@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Patterns.Bulder.Car_parts
+namespace Patterns.Builder
 {
 	public class SteelBody : IBody
 	{ 

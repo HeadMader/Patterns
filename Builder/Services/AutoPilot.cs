@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Patterns.Bulder.Services
+namespace Patterns.Builder
 {
-	internal class AutoPilot : ICarService
+    internal class AutoPilot : ICarService
 	{
 		public string Name => "AutoPilot";
 		

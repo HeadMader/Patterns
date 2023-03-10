@@ -1,10 +1,6 @@
-﻿using Patterns.Bulder.Builders;
-using Patterns.Bulder.Services;
-using Patterns.Extansions;
-
-namespace Patterns.Bulder
+﻿namespace Patterns.Builder
 {
-	internal class CarFactory
+	internal class Director
 	{
 		/// <summary>
 		/// Sets all nessessory components to the <see cref="Car"></see>

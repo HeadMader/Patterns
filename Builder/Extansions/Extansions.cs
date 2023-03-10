@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Patterns.Bulder;
-
-namespace Patterns.Extansions
+﻿namespace Patterns.Builder
 {
     internal static class Extansions
     {
@@ -30,18 +23,25 @@ namespace Patterns.Extansions
         /// <param name="carService"></param>
         public static void RemoveService(this IEnumerable<ICarService> services, ICarService carService)
         {
-            services.RemoveService(carService);
+            if (services.Count() != 0)
+            {
+                services.RemoveService(carService);
+            }
         }
 
         /// <summary>
-        /// Check if collection of <see cref="name.space.typename{T}"/> contaions object of specific type
+        /// Check if collection of contaions object of specific type
         /// </summary>
         /// <param name="services"></param>
         /// <param name="carService"></param>
         /// <returns><see cref="true"/> if contain</returns>
         public static bool Contains(this IEnumerable<ICarService> services, Type carService)
-        {
-            return services.FirstOrDefault(c => c.GetType() == carService) == null ? false : true;
+		{
+            if (services.Count() != 0)
+            {
+                return services.FirstOrDefault(c => c.GetType() == carService) == null ? false : true;
+            }
+            return false;
         }
 
         /// <summary>
